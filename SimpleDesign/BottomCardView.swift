@@ -26,6 +26,7 @@ struct BottomCardView: View {
         .background(Color("Background 3"))
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .shadow(radius: 20)
+        .ignoresSafeArea(.all, edges: .bottom)
     }
 }
 

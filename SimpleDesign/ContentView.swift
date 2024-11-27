@@ -43,7 +43,7 @@ struct ContentView: View {
                             }
                         }
                 )
-            Text("\(bottomState.height)").offset(y: -300)
+//            Text("\(bottomState.height)").offset(y: -300)
 
             BottomCardView()
                 .offset(y: showBottomCard ? 360 : 1000)

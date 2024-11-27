@@ -56,23 +56,6 @@ struct CardView: View {
                 BottomCard.toggle()
             }
         }
-//        .gesture(
-//            DragGesture()
-//                .onChanged { value in
-//                    withAnimation(.linear){
-//                        self.viewState = value.translation
-//                        self.showBackCard = true
-//                    }
-//                }
-//                .onEnded { value in
-//                    withAnimation(.bouncy) {
-//                        self.viewState = .zero
-//                        self.showBackCard = false
-//                    }
-//                }
-//        )
-        
-        
     }
 
 }
