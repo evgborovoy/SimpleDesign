@@ -37,7 +37,6 @@ struct Home: View {
                     }
             }
             
-            //TODO: smooth animation
             MenuView()
                 .offset(y: showProfile ? 0 : UIScreen.main.bounds.height)
                 .offset(y: viewState.height)
@@ -51,7 +50,9 @@ struct Home: View {
                             }
                         }
                         .onEnded{ value in
-                            self.viewState = .zero
+                            withAnimation {
+                                self.viewState = .zero
+                            }
                         }
                 )
         }
