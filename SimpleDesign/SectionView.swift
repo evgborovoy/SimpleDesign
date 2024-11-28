@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SectionView: View {
-    var section: Section
+    let section: Section
     
     var body: some View {
         VStack {

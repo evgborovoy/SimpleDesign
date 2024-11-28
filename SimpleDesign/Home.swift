@@ -10,6 +10,7 @@ import SwiftUI
 struct Home: View {
     @State var showProfile = false
     @State var viewState = CGSize.zero
+    @State var showContent = false
     
     let animation = Animation.spring(response: 0.5, dampingFraction: 0.6)
     
@@ -18,7 +19,7 @@ struct Home: View {
             Color.gray
                 .ignoresSafeArea()
             
-            HomeView(showProfile: $showProfile)
+            HomeView(showProfile: $showProfile, showContent: $showContent)
                 .padding(.top, 30)
                 .background(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
@@ -55,6 +56,25 @@ struct Home: View {
                             }
                         }
                 )
+            
+            if showContent {
+                Color.white.ignoresSafeArea(edges: .all)
+                
+                ContentView()
+                Spacer()
+                
+                Image(systemName: "xmark")
+                    .frame(width: 36, height: 36)
+                    .foregroundStyle(.white)
+                    .background(.black)
+                    .clipShape(Circle())
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                    .padding()
+                    .transition(.move(edge: .top))
+                    .onTapGesture {
+                        showContent = false
+                    }
+            }
         }
     }
 }

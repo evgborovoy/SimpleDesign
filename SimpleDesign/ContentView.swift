@@ -45,7 +45,7 @@ struct ContentView: View {
                 )
 //            Text("\(bottomState.height)").offset(y: -300)
 
-            BottomCardView()
+            BottomCardView(show: $showBottomCard)
                 .offset(y: showBottomCard ? 360 : 1000)
                 .offset(y: bottomState.height)
                 .gesture(
